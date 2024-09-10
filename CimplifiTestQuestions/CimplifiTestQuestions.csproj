@@ -6,4 +6,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+	<ProjectExtensions>
+		<PackageReference>Microsoft.Extensions</PackageReference>
+	</ProjectExtensions>
+
 </Project>
