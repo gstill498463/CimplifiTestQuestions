@@ -6,9 +6,11 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorPages();
 
-builder.Services.AddTransient<CimplifiTestQuestions.Services.ILogger, ConsoleLogger>();
-builder.Services.AddTransient<CimplifiTestQuestions.Services.ILogger>(provider => new FileLogger("log.txt"));
+builder.Services.AddScoped<CimplifiTestQuestions.Services.ILogger, ConsoleLogger>();
+builder.Services.AddScoped<CimplifiTestQuestions.Services.ILogger>(provider => new FileLogger("log.txt"));
 builder.Services.AddHttpClient<AsyncProgramming_DataFetch>();
+builder.Services.AddScoped<SquaresOfOddNumbers>();
+builder.Services.AddSingleton<ThreadSafeSingleton>();
 
 var app = builder.Build();
 
