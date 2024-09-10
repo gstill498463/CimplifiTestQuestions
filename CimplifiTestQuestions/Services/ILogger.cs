@@ -1,6 +1,7 @@
 ﻿namespace CimplifiTestQuestions.Services
 {
-    public class ILogger
+    public interface ILogger
     {
+        void Log(string message);
     }
 }
